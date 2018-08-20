@@ -51,6 +51,10 @@
 //方法一：
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
     NSLog(@"AppDelegate method 'applicationDidReceiveMemoryWarning' execute");
+    
+    //例如：当列表页面需要加载大量图片时，系统会发出内存警告，这是可以清除掉SDWebImage产生的图片缓存，从而释放一些资源，有所改善，但这并不能完全解决内存的问题，在此基础上，我们可以使用缩略图。在列表中展示图片的时候展示缩略图，点击查看大图的时候才去加载原图，减少由于加载原图而占用过多的内存，缩略图的生成可在服务端实现。
+//    SDImageCache *cache = [SDImageCache sharedImageCache];
+//    [cache clearMemory];
 }
 
 @end
